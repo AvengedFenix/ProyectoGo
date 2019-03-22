@@ -1,0 +1,60 @@
+body {
+    font-family: Montserrat;
+}
+
+.center {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+#title {
+    font-style: bold;
+    font-size: 24px;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.card {
+    height: 42vh !important;
+    margin: 8px !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    position: absolute !important;
+}
+
+.navbar {
+    padding-left: 5vw;
+    font-size: .9rem;
+    background: #fefefe !important;
+}
+
+.navbar-brand {
+    font-weight: 900;
+    font-size: 1.5em;
+    margin-right: 2.4vw;
+    font-family: Montserrat;
+    color: #000!important;
+}
+
+.nav-link {
+    color: rgb(106, 106, 106);
+    font-size: 0.9em !important;
+    align-items: flex-start;
+    font-weight: 200 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    justify-self: center;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Carrito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <script type="text/javascript" src="/public/jquery-3.3.1.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#java").on('click', function () {
+                $.ajax({
+                    url: "http://localhost:8000/addJava",
+                    method: "GET",
+                    success: function (data) {
+                        $("#response").html(data);
+                    },
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="cards">
+        <div class="card" style="width: 18rem;">
+            <img src="/public/Images/Java.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">El lenguaje de programación Java</h5>
+                <p class="card-text">Pearson Education</p>
+                Numero de copias que lleva:
+                {{ range $key, $value:= .}} {{ if eq $value.Isbn 8478290451}} {{ $value.Copies }} {{ end }} {{ end }}
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="/public/Images/C.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">El lenguaje de programación C</h5>
+                <p class="card-text">Prentice Hall</p>
+                Numero de copias que lleva:
+                {{ range $key, $value:= .}} {{ if eq $value.Isbn 9688802050}} {{ $value.Copies }} {{ end }} {{ end }}
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="/public/Images/C++.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Cómo programar en C++</h5>
+                <p class="card-text">Pearson Education</p>
+                Numero de copias que lleva:
+                {{ range $key, $value:= .}} {{ if eq $value.Isbn 9702602548}} {{ $value.Copies }} {{ end }} {{ end }}
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="/public/Images/Lenguajes2.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Lenguajes de Programación, Diseño e Implementación</h5>
+                <p class="card-text">Prentice Hall</p>
+                Numero de copias que lleva:
+                {{ range $key, $value:= .}} {{ if eq $value.Isbn 9688800767}} {{ $value.Copies }} {{ end }} {{end}}
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="/public/Images/Lenguajes1.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Lenguajes de Programación: Principios y Paradigmas</h5>
+                <p class="card-text">McGraw-Hill</p>
+                Numero de copias que lleva:
+                {{ range $key, $value:= .}}
+                {{ if eq $value.Isbn 9701047567}} {{ $value.Copies }} {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <button id="descuento" class="btn btn-primary">Mostrar mejor descuento</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
